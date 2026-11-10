@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Four Founding Documents of the United States</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📜%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#faf6ee;--card:#fff;--ink:#1f2433;--mute:#5b6275;--line:#e3dccb;--navy:#1d3557;--red:#b23a48;--gold:#c8962e;--ok:#2d7a4f;--bad:#b23a48;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141824;--card:#1e2435;--ink:#eef0f6;--mute:#a4abc0;--line:#323a52;--navy:#8fb2e8;--red:#ef8a96;--gold:#e5b85a;--ok:#6fcf97;--bad:#ef8a96}}
+:root[data-theme="dark"]{--bg:#141824;--card:#1e2435;--ink:#eef0f6;--mute:#a4abc0;--line:#323a52;--navy:#8fb2e8;--red:#ef8a96;--gold:#e5b85a;--ok:#6fcf97;--bad:#ef8a96}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,"Times New Roman",serif}
+header{padding:28px 20px 12px;text-align:center}
+h1{font-size:clamp(1.6rem,5vw,2.5rem);margin:0;color:var(--navy);line-height:1.2}
+.sub{color:var(--mute);margin:8px auto 0;max-width:640px;font-family:system-ui,sans-serif;font-size:.95rem}
+nav{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:12px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;border-bottom:1px solid var(--line)}
+nav button,.btn{font:600 .88rem system-ui,sans-serif;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 13px;border-radius:999px;cursor:pointer}
+nav button[aria-selected=true]{background:var(--navy);color:var(--bg);border-color:var(--navy)}
+main{max-width:860px;margin:0 auto;padding:20px 16px 60px}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.tile{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:12px;padding:14px;cursor:pointer;text-align:left;color:var(--ink);font:inherit}
+.tile b{display:block;font-size:1.5rem;color:var(--c)}
+.tile span{font-size:.9rem;color:var(--mute);font-family:system-ui,sans-serif}
+h2{color:var(--navy);margin:.2em 0 .4em}
+h3{margin:1em 0 .3em;color:var(--navy);font-size:1.05rem}
+.year{display:inline-block;background:var(--c);color:#fff;font:700 .85rem system-ui,sans-serif;padding:3px 11px;border-radius:999px}
+ul{padding-left:1.2em}li{margin:.35em 0}
+.cite{color:var(--mute);font-size:.88rem;font-family:system-ui,sans-serif}
+.cite a,a{color:var(--navy)}
+.reveal{margin-top:12px}
+.hidden{display:none}
+.opt{display:block;width:100%;text-align:left;margin:7px 0;padding:11px 14px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--navy)}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,var(--card))}
+.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 15%,var(--card))}
+.bar{height:8px;background:var(--line);border-radius:9px;overflow:hidden;margin:6px 0 14px}
+.bar i{display:block;height:100%;background:var(--gold);width:0;transition:width .3s}
+.fb{margin-top:10px;padding:10px 14px;border-radius:10px;background:color-mix(in srgb,var(--gold) 16%,var(--card));font-size:.95rem}
+.big{font-size:2.6rem;color:var(--navy);font-weight:700}
+.tl{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.tl .opt{width:auto;flex:1 1 200px;margin:0}
+.slots{display:flex;flex-direction:column;gap:6px;margin:10px 0}
+.slot{padding:9px 14px;border:2px dashed var(--line);border-radius:10px;min-height:42px;font-family:system-ui,sans-serif;font-size:.95rem;color:var(--mute)}
+.slot.f{border-style:solid;border-color:var(--ok);color:var(--ink)}
+.ref{padding-left:2em;text-indent:-2em;margin:0 0 14px}
+footer{text-align:center;color:var(--mute);font:.85rem system-ui,sans-serif;padding:20px}
+@media (max-width:520px){body{font-size:16px}}
+</style>
+</head>
+<body>
+<header>
+<h1>📜 Four Founding Documents of the United States</h1>
+<p class="sub">Read about each document, check where the facts come from, then test yourself with tasks and a final quiz.</p>
+</header>
+<nav id="nav" role="tablist"></nav>
+<main id="main"></main>
+<footer>Nannestad High School - Barbara Anna Zielonka</footer>
+
+<script>
+var DOCS=[
+{id:"dec",c:"#b23a48",icon:"🗽",title:"Declaration of Independence",year:"1776",
+ sum:"On July 4, 1776, the Continental Congress approved a statement that explained why the thirteen colonies were separating from Britain.",
+ pts:["The opening says that all people have unalienable rights, including Life, Liberty and the pursuit of Happiness.","It argues that governments get their just power from the consent of the governed.","It lists many complaints about King George III to show why the colonies felt forced to break away.","It ends by declaring the colonies to be free and independent states."],
+ cite:"(National Archives, n.d.-c)",link:"https://www.archives.gov/founding-docs/declaration-transcript",lt:"Declaration of Independence: A Transcription | National Archives",
+ think:"The Declaration says that all men are created equal. In 1776, enslaved people and women did not have equal rights. How might later generations have used these same words?"},
+{id:"art",c:"#c8962e",icon:"🔗",title:"Articles of Confederation",year:"1777",
+ sum:"Congress approved the Articles in November 1777, and all thirteen states had agreed by March 1, 1781. They were the first constitution of the new nation.",
+ pts:["The states formed what the text calls a firm league of friendship.","There was one Congress, and each state had one vote.","There was no president and no national court system.","Congress could ask the states for money but could not collect taxes itself.","Important decisions needed nine of the thirteen states, and any change to the Articles needed all of them."],
+ cite:"(Lillian Goldman Law Library, n.d.)",link:"https://avalon.law.yale.edu/18th_century/artconf.asp",lt:"Articles of Confederation | The Avalon Project",
+ think:"The states had just fought a war against a strong central government. Why might they have wanted the new national government to be weak?"},
+{id:"con",c:"#1d3557",icon:"🏛️",title:"The United States Constitution",year:"1787",
+ sum:"Delegates met in Philadelphia in 1787 and signed a new plan of government on September 17, 1787. It replaced the Articles of Confederation.",
+ pts:["It begins with the words “We the People”.","Article I creates Congress (legislative), Article II the President (executive) and Article III the courts (judicial).","The three branches check and balance each other, so that no one branch holds all the power.","Power is shared between the national government and the states (federalism).","It can be changed through amendments. There are 27 so far."],
+ cite:"(National Archives, n.d.-b; Library of Congress, n.d.)",link:"https://www.archives.gov/founding-docs/constitution",lt:"The Constitution of the United States | National Archives",
+ think:"Why might the writers have divided power among three branches instead of giving it to one person or group?"},
+{id:"bor",c:"#2d7a4f",icon:"🗣️",title:"The Bill of Rights",year:"1791",
+ sum:"The Bill of Rights is the first ten amendments to the Constitution. They were ratified on December 15, 1791.",
+ pts:["The First Amendment protects freedom of religion, speech, the press, assembly and petition.","The Fourth Amendment protects people against unreasonable searches and seizures.","The Sixth Amendment gives accused people the right to a speedy, public trial and a lawyer.","The Tenth Amendment says that powers not given to the national government stay with the states or the people.","Many people wanted these written protections added to the Constitution."],
+ cite:"(National Archives, n.d.-a)",link:"https://www.archives.gov/founding-docs/bill-of-rights-transcript",lt:"The Bill of Rights: A Transcription | National Archives",
+ think:"Which right in the First Amendment matters most to you when you use social media? Explain why."}
+];
+var REFS=[
+'Library of Congress. (n.d.). <i>Constitution annotated</i>. Congress.gov. <a href="https://constitution.congress.gov/" target="_blank" rel="noopener">https://constitution.congress.gov/</a>',
+'Lillian Goldman Law Library. (n.d.). <i>Articles of Confederation: March 1, 1781</i>. The Avalon Project, Yale Law School. <a href="https://avalon.law.yale.edu/18th_century/artconf.asp" target="_blank" rel="noopener">https://avalon.law.yale.edu/18th_century/artconf.asp</a>',
+'National Archives. (n.d.-a). <i>The Bill of Rights: A transcription</i>. <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript" target="_blank" rel="noopener">https://www.archives.gov/founding-docs/bill-of-rights-transcript</a>',
+'National Archives. (n.d.-b). <i>The Constitution of the United States</i>. <a href="https://www.archives.gov/founding-docs/constitution" target="_blank" rel="noopener">https://www.archives.gov/founding-docs/constitution</a>',
+'National Archives. (n.d.-c). <i>Declaration of Independence: A transcription</i>. <a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank" rel="noopener">https://www.archives.gov/founding-docs/declaration-transcript</a>'];
+var D=["Declaration of Independence","Articles of Confederation","Constitution","Bill of Rights"];
+var WHICH=[
+["Said that all men are created equal.",0,"The Declaration of Independence states this idea near the start."],
+["Listed complaints against King George III.",0,"The Declaration lists these complaints to justify independence."],
+["Gave Congress no power to collect taxes.",1,"Under the Articles, Congress could only ask the states for money."],
+["Was the first constitution of the United States.",1,"The Articles of Confederation came before the Constitution."],
+["Created three branches of government.",2,"Articles I, II and III set up Congress, the President and the courts."],
+["Begins with the words “We the People”.",2,"This is the Preamble of the Constitution."],
+["Protects freedom of the press.",3,"This protection is in the First Amendment."],
+["Is made up of the first ten amendments.",3,"The Bill of Rights is amendments 1 to 10."]];
+var B=["Legislative (Congress)","Executive (President)","Judicial (Courts)"];
+var BR=[
+["Makes the laws.",0,"Article I gives lawmaking power to Congress."],
+["Can veto a bill passed by Congress.",1,"The President can veto, but Congress can override with enough votes."],
+["Settles legal disputes and interprets the law.",2,"This is the work of the courts under Article III."],
+["Decides how the government collects taxes.",0,"Congress holds the power to lay and collect taxes."],
+["Nominates federal judges.",1,"The President nominates, and the Senate must approve."],
+["Can declare war.",0,"Only Congress can declare war."]];
+var QUIZ=[
+["Which document announced that the colonies were independent from Britain?",["Declaration of Independence","Bill of Rights","Articles of Confederation","Constitution"],0,"The Declaration of Independence (1776) did this."],
+["How many branches of government does the Constitution create?",["Two","Three","Four","Five"],1,"Legislative, executive and judicial."],
+["The Bill of Rights is made up of the first how many amendments?",["Three","Five","Ten","Twenty"],2,"The first ten amendments."],
+["Which document was the first constitution of the United States?",["The Constitution","Articles of Confederation","Bill of Rights","Declaration of Independence"],1,"The Articles of Confederation came first."],
+["What was a major weakness of the Articles of Confederation?",["Congress could not collect taxes itself","The President was too strong","There were too many courts","States could not vote"],0,"Congress could only ask the states for money."],
+["Which amendment protects freedom of speech?",["Fourth","Sixth","Tenth","First"],3,"The First Amendment."],
+["Which phrase appears in the Declaration of Independence?",["We the People","Life, Liberty and the pursuit of Happiness","A firm league of friendship","Speedy and public trial"],1,"“We the People” is in the Constitution, and the league of friendship is in the Articles."],
+["In which year was the Bill of Rights ratified?",["1776","1781","1787","1791"],3,"It was ratified on December 15, 1791."],
+["According to the Declaration, where do governments get their just power?",["From the king","From the consent of the governed","From the army","From the courts"],1,"This idea is a key part of the Declaration."],
+["What does the Tenth Amendment say?",["Powers not given to the national government stay with the states or the people","Congress can declare war","Citizens may bear arms","People have the right to a lawyer"],0,"It protects the powers of states and people."]];
+
+var TABS=[["home","Home"],["dec","1776"],["art","1777"],["con","1787"],["bor","1791"],["time","Timeline"],["doc","Which document?"],["br","Branches"],["quiz","Quiz"],["src","Sources"]];
+var nav=document.getElementById("nav"),main=document.getElementById("main");
+function el(h){var d=document.createElement("div");d.innerHTML=h;return d.firstElementChild}
+function sh(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function show(id){
+ [].forEach.call(nav.children,function(b){b.setAttribute("aria-selected",b.dataset.t===id)});
+ [].forEach.call(main.children,function(s){s.classList.toggle("on",s.id==="s-"+id)});
+ window.scrollTo(0,0);try{history.replaceState(null,"","#"+id)}catch(e){}
+}
+TABS.forEach(function(t){
+ var b=el('<button role="tab" data-t="'+t[0]+'">'+t[1]+'</button>');
+ b.onclick=function(){show(t[0])};nav.appendChild(b);
+ var s=document.createElement("section");s.id="s-"+t[0];main.appendChild(s);
+});
+function sec(id,h){document.getElementById("s-"+id).innerHTML=h}
+
+// Home
+sec("home",'<div class="card"><h2>Welcome</h2><p>These four documents shaped how the United States began and how it is governed today. Pick a document to start. Every page shows where its information comes from, and the Sources tab lists full references in APA format.</p></div><div class="grid">'+DOCS.map(function(d){return '<button class="tile" style="--c:'+d.c+'" data-go="'+d.id+'"><b>'+d.year+'</b>'+d.icon+' '+d.title+'<br><span>Tap to read</span></button>'}).join("")+'</div><div class="card" style="margin-top:16px"><h3>How to use this site</h3><ul><li>Read each document page and answer the thinking question.</li><li>Do the three activities: Timeline, Which document? and Branches.</li><li>Finish with the 10 question quiz.</li></ul></div>');
+[].forEach.call(document.querySelectorAll("[data-go]"),function(b){b.onclick=function(){show(b.dataset.go)}});
+
+// Doc pages
+DOCS.forEach(function(d,i){
+ sec(d.id,'<div class="card" style="--c:'+d.c+'"><a class="year" style="text-decoration:none" href="'+d.link+'" target="_blank" rel="noopener" title="Open the original document">'+d.year+' ↗</a><h2>'+d.icon+' '+d.title+'</h2><p>'+d.sum+'</p><h3>Key points</h3><ul>'+d.pts.map(function(p){return '<li>'+p+'</li>'}).join("")+'</ul><p class="cite">Source: '+d.cite+'. See the Sources tab for the full reference.</p><p><a class="btn" style="display:inline-block;text-decoration:none" href="'+d.link+'" target="_blank" rel="noopener">📖 Check the original: '+d.lt+' ↗</a></p><button class="btn" data-th="'+i+'">💭 Think about it</button><div class="reveal hidden fb" id="th'+i+'">'+d.think+'</div></div>');
+});
+[].forEach.call(document.querySelectorAll("[data-th]"),function(b){b.onclick=function(){document.getElementById("th"+b.dataset.th).classList.toggle("hidden")}});
+
+// Quiz engine
+function engine(id,title,intro,items,labels){
+ var s=document.getElementById("s-"+id),i,score,list;
+ function start(){list=sh(items);i=0;score=0;draw()}
+ function draw(){
+  if(i>=list.length){var pct=Math.round(score/list.length*100);
+   s.innerHTML='<div class="card" style="text-align:center"><h2>'+title+'</h2><div class="big">'+score+' / '+list.length+'</div><p>'+(pct>=80?"Excellent work!":pct>=50?"Good effort. Review the document pages and try again.":"Keep going. Read the document pages and try again.")+'</p><button class="btn" id="rs'+id+'">Try again</button></div>';
+   document.getElementById("rs"+id).onclick=start;return}
+  var q=list[i],txt,opts,ans,why;
+  if(labels){txt=q[0];opts=labels.map(function(l,k){return [l,k]});ans=q[1];why=q[2]}
+  else{txt=q[0];opts=q[1].map(function(l,k){return [l,k]});opts=sh(opts);ans=q[2];why=q[3]}
+  s.innerHTML='<div class="card"><h2>'+title+'</h2><p class="cite">'+intro+'</p><div class="bar"><i style="width:'+(i/list.length*100)+'%"></i></div><p class="cite">Question '+(i+1)+' of '+list.length+' · Score '+score+'</p><p><b>'+txt+'</b></p><div id="o'+id+'"></div><div id="f'+id+'"></div></div>';
+  var box=document.getElementById("o"+id);
+  opts.forEach(function(o){
+   var b=el('<button class="opt"></button>');b.textContent=o[0];
+   b.onclick=function(){
+    var ok=o[1]===ans;if(ok)score++;
+    [].forEach.call(box.children,function(x,k){x.disabled=true;if(opts[k][1]===ans)x.classList.add("ok")});
+    if(!ok)b.classList.add("bad");
+    document.getElementById("f"+id).innerHTML='<div class="fb">'+(ok?"✅ Correct. ":"❌ Not quite. ")+why+'</div><p><button class="btn" id="nx'+id+'">'+(i+1>=list.length?"See score":"Next")+'</button></p>';
+    document.getElementById("nx"+id).onclick=function(){i++;draw()};
+   };box.appendChild(b)});
+ }
+ start();
+}
+engine("doc","Which document?","Choose the document that matches each statement.",WHICH,D);
+engine("br","Branches of government","Which branch of government does each task belong to?",BR,B);
+engine("quiz","Final quiz","Answer all 10 questions. Use what you learned on the document pages.",QUIZ,null);
+
+// Timeline
+(function(){
+ var s=document.getElementById("s-time"),order=[0,1,2,3];
+ var info=["Declaration of Independence (1776)","Articles of Confederation (1777)","Constitution (1787)","Bill of Rights (1791)"];
+ var next,tries;
+ function start(){next=0;tries=0;draw()}
+ function draw(){
+  s.innerHTML='<div class="card"><h2>Put them in order</h2><p class="cite">Tap the documents from the oldest to the newest.</p><div class="slots" id="sl"></div><div class="tl" id="tc"></div><p id="tm" class="fb hidden"></p></div>';
+  var sl=document.getElementById("sl"),tc=document.getElementById("tc"),tm=document.getElementById("tm");
+  for(var k=0;k<4;k++)sl.appendChild(el('<div class="slot" id="sl'+k+'">'+(k+1)+'</div>'));
+  sh(order).forEach(function(n){
+   var b=el('<button class="opt">'+D[n]+'</button>');
+   b.onclick=function(){
+    tm.classList.remove("hidden");
+    if(n===next){var x=document.getElementById("sl"+next);x.innerHTML=(next+1)+'. <a href="'+DOCS[n].link+'" target="_blank" rel="noopener">'+info[n]+' ↗</a>';x.classList.add("f");b.remove();next++;
+     tm.textContent=next===4?"🎉 Done! You needed "+tries+" wrong "+(tries===1?"guess":"guesses")+". Note that the Articles were approved in 1777 but only took effect in 1781.":"Correct. What came next?"}
+    else{tries++;tm.textContent="Not yet. Think about which document came first."}
+   };tc.appendChild(b)});
+ }
+ start();
+})();
+
+// Sources
+sec("src",'<div class="card"><h2>Sources</h2><p class="cite">References in APA 7 format. Each document page shows an in text citation such as (National Archives, n.d.-c) that points to one of these entries. The abbreviation n.d. means no date.</p>'+REFS.map(function(r){return '<p class="ref">'+r+'</p>'}).join("")+'<h3>Be a careful reader</h3><p>This site is a summary. For the exact wording of any document, open the original text through the links above and check the details yourself.</p></div>');
+
+var h=(location.hash||"").slice(1);
+show(TABS.some(function(t){return t[0]===h})?h:"home");
+</script>
+</body>
+</html>
